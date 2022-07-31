@@ -13,9 +13,8 @@
 
 ## App's components
 Create service `ionic g service services/fcm` that will incapsulate fcm (Firebase Cloud Messaging) logic  
-
-
-
+Create page `ionic g page pages/details` to host some custom code  
+Install the push notification plugin `npm install @capacitor/push-notifications` -> sync `npx cap sync`
 
 ## Docs how use Push Notifications in Ionic Capacitor project
 - Capacitor plugin https://capacitorjs.com/docs/apis/push-notifications
