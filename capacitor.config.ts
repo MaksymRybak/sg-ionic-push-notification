@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
+  appId: 'it.devschool.devpush',
   appName: 'pushApp',
   webDir: 'www',
   bundledWebRuntime: false
