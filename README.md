@@ -2,6 +2,6 @@ ionic start pushApp blank --type=angular --capacitor --package-d=it.devschool.de
 
 ionic build
 
-npx cap add ios
-npx cap add android
+ionic cap add ios
+ionic cap add android
 
