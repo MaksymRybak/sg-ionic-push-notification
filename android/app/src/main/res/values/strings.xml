@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">pushApp</string>
+    <string name="title_activity_main">pushApp</string>
+    <string name="package_name">it.devschool.devpush</string>
+    <string name="custom_url_scheme">it.devschool.devpush</string>
+</resources>
