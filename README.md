@@ -1,15 +1,14 @@
 # Ionic Push Notification app
 
 ## Useful commands for Ionic projectß
-`ionic start pushApp blank --type=angular --capacitor`
+`ionic start pushApp blank --type=angular --capacitor`  - create new ionic angular app with capacitor 
 
-`ionic build`
-
-`ionic cap add ios`
-`ionic cap add android`
-
-`ionic cap copy ios`
-`ionic cap open ios`
+`ionic build`               - build web assets (eg. angular project)  
+`ionic cap add ios`         - add ios native project  
+`ionic cap add android`     - add android native project  
+`npx cap copy`              - refresh web assets in native projects
+`npx cap open ios`          - open xcode
+`npx cap open android`      - open android studio
 
 ## App's components
 Create service `ionic g service services/fcm` that will incapsulate fcm (Firebase Cloud Messaging) logic  
@@ -17,6 +16,7 @@ Create page `ionic g page pages/details` to host some custom code
 Install the push notification plugin `npm install @capacitor/push-notifications` -> sync `npx cap sync`
 
 ## Docs how use Push Notifications in Ionic Capacitor project
+- Environment setup https://capacitorjs.com/docs/getting-started/environment-setup
 - Capacitor plugin https://capacitorjs.com/docs/apis/push-notifications
 - How integrate with firebase https://capacitorjs.com/docs/guides/push-notifications-firebase
 

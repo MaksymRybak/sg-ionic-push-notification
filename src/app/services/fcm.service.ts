@@ -19,6 +19,8 @@ export class FcmService {
   private registerPush() {
     // Request user for permission, in real app we have to call this method in an appropriate moment for user
     // eg. when user login / details page when user subscribe for something related to push notifications
+    // note: iOS will prompt user and return if they granted permission or not
+    //       Android will just grant without prompting
     PushNotifications.requestPermissions().then((permission) => {
       if (permission.receive === 'granted') {
         // Register with Apple / Google to receive push via APNS/FCM
@@ -29,6 +31,8 @@ export class FcmService {
     });
 
     // add listeners 
+
+    // On success, we should be able to receive notifications
     PushNotifications.addListener(
       'registration',
       (token: Token) => {
@@ -36,6 +40,7 @@ export class FcmService {
       }
     );
 
+    // Some issue with our setup and push will not work
     PushNotifications.addListener(
       'registrationError',
       (error: any) => {
@@ -43,6 +48,7 @@ export class FcmService {
       }
     );
 
+    // Show us the notification payload if the app is open on our device
     PushNotifications.addListener(
       'pushNotificationReceived',
       async (notification: PushNotificationSchema) => {
@@ -50,6 +56,7 @@ export class FcmService {
       }
     );
 
+    // Method called when tapping on a notification
     PushNotifications.addListener(
       'pushNotificationActionPerformed',
       async (notification: ActionPerformed) => {
