@@ -45,7 +45,7 @@ registration. There are two ways to integrate push notifications:
     we have to install this key in the mac certchain, export it in .p12 and only after that we can
     upload it in firebase)
     - use key (easier one, suggested by firebase, we are going to use this one) -> in the Keys 
-    create a new one for Push Notification -> download .p8 file -> save it locally, is used in tep (3)
+    create a new one for Push Notification -> download .p8 file -> save it locally, is used in tep (3)  
 5. for ios project -> in xcode/vscode -> open Podfile (used to install additional libraries for
 ios app) -> add Firebase/Messaging below the comment # Add your Pods here
 ```
@@ -55,9 +55,13 @@ target 'App' do
   pod 'Firebase/Messaging'
 end
 ```
-
 6. for ios project only, run `npx cap update ios` to reinstall all pods and update native dependencies.  
 Open AppDelegate.swift and perform these changes:
     - add `import Firebase` in the imports
     - add `FirebaseApp.configure()`in the application() func
     - to get the token correctly, add the two funcs reported here https://capacitorjs.com/docs/guides/push-notifications-firebase#:~:text=add%20the%20following%20two%20methods
+7. for ios project, in xcode, add Push Notification capability in Signing & Capabilities
+
+## Tips & Tricks
+- Push notifications do not work on ios simulator, we have to use real devices connected to XCode
+- To send push notification we can use Firebase Cloud Messaging and send the notification to specific device, using it's token that we can get from xcode console (search for "My token" in the logs), or send the message to all registered devices

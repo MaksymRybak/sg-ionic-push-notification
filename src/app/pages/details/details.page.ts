@@ -21,6 +21,7 @@ export class DetailsPage implements OnInit {
   resetBadgeCount() {
     // remove everything from control center, clear badge count
     PushNotifications.removeAllDeliveredNotifications();
+    // this method should be called only when the notifications are enabled
   }
 
 }
